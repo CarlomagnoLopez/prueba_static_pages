@@ -9,9 +9,7 @@ interface Props{
   pokemons : SmallPokemon[];
 }
 
-const onClickPokemon= () =>{
-  alert("ss")
-}
+
 
 const HomePage:NextPage<Props> = ({pokemons}) =>  {
   return (
