@@ -10,6 +10,7 @@ interface Props {
     pokemon:Pokemon;
 }
 
+
 const PokemonPage:NextPage<Props> = ({pokemon}) =>{
 
     return(
@@ -35,7 +36,7 @@ export const getStaticProps: GetStaticProps = async ({params}) => {
     
     const {id} = params as {id:string}
 
-    const {data} = await pokeApi.get<Pokemon>(`/pokemon/${id}`).catch( err => 'error')
+    const {data} = await pokeApi.get<Pokemon>(`/pokemon/${id}`).catch( err => err)
 
     const pokemon = await getPokemonInfo(id)
 
